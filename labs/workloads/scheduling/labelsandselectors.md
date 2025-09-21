@@ -1,6 +1,6 @@
 # Labels & Selectors in Kubernetes — Full Lab (with YAML files embedded)
 
-This single Markdown file contains the explanation, commands, and the full YAML manifests for the **labels & selectors** lab — ready to copy/paste or save to a GitHub repo.
+
 
 ---
 
