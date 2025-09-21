@@ -60,52 +60,9 @@ Apply it with:
 kubectl apply -f deployment.yaml
 ```
 
-## 2. StatefulSets
 
-StatefulSets provide stable network identities and persistent storage for stateful applications.
 
-**Manifest** (`statefulset.yaml`):
-
-```yaml
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: web-stateful
-spec:
-  serviceName: "web"
-  replicas: 3
-  selector:
-    matchLabels:
-      app: web
-  template:
-    metadata:
-      labels:
-        app: web
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.23
-        volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
-  volumeClaimTemplates:
-  - metadata:
-      name: www
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 1Gi
-```
-
-Apply and inspect:
-
-```bash
-kubectl apply -f statefulset.yaml
-kubectl get pods -l app=web
-```
-
-## 3. DaemonSets
+## 2. DaemonSets
 
 DaemonSets ensure that all (or some) nodes run a copy of a Pod. Useful for logging or monitoring agents.
 
@@ -138,4 +95,4 @@ kubectl apply -f daemonset.yaml
 
 ## Next Steps
 
-Proceed to the `networking/` lab to expose your applications to internal and external clients.
+Proceed to stateful set  and then Proceed to the `networking/` lab to expose your applications to internal and external clients.
