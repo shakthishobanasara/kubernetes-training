@@ -261,5 +261,4 @@ EOF
 
 ---
 
-### Final notes
-This single MD contains both explanation and runnable artifacts for teaching/demo. Use the **correct** deployment to demonstrate happy-path, then show how services rely on labels to discover endpoints and how a **broken** deployment or misaligned selector causes services to have *no endpoints* or controllers to misbehave.
+
