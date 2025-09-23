@@ -114,7 +114,7 @@ kubectl logs cm-demo
 Create a Secret:
 
 ```bash
-kubectl create secret generic db-secret --from-literal=username=admin --from-literal=password=Pa$$w0rd
+kubectl create secret generic db-secret --from-literal=username='admin' --from-literal=password='Pa$$w0rd'
 kubectl get secrets db-secret -o yaml
 ```
 
