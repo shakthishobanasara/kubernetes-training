@@ -140,6 +140,6 @@ http://web.example.com
 # Step to check clusterIP within pod
 ## test pod
 
-kubectl run testpod --rm -it --image=busybox:1.36 -- sh
-wget -qO- http://web:80
+-kubectl run testpod --rm -it --image=busybox:1.36 -- sh
+-wget -qO- http://web:80
 
