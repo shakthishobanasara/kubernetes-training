@@ -8,7 +8,7 @@ This lab explores the different **Service types** and **Ingress** in Kubernetes,
 
 | Service Type | Command (example) | How to Access | When to Use (Real-world Scenario) |
 |--------------|------------------|---------------|-----------------------------------|
-| **ClusterIP** (default) | ```kubectl expose deployment web --port=80 --target-port=80 --type=ClusterIP``` | Inside cluster only: `http://web.default.svc.cluster.local:80` | Backend APIs, databases, or any **internal-only service**. |
+| **ClusterIP** (default) | ```kubectl expose deployment web --port=80 --target-port=80 --type=ClusterIP``` | Inside cluster only(test from pods): `http://web.default.svc.cluster.local:80` | Backend APIs, databases, or any **internal-only service**. |
 | **NodePort** | ```kubectl expose deployment web --port=80 --target-port=80 --type=NodePort``` | Outside: `http://<NodeIP>:<NodePort>` (e.g., `http://192.168.99.100:30080`) | For **testing/demo** or when node IPs are reachable. Rarely prod. |
 | **LoadBalancer** | ```kubectl expose deployment web --port=80 --target-port=80 --type=LoadBalancer``` | Cloud external IP: `http://<EXTERNAL-IP>:80` | Public-facing apps in **cloud providers** (AWS ELB, Azure LB, GCP LB). |
 | **ExternalName** | ```kubectl create service externalname my-svc --external-name=db.example.com``` | Inside cluster: `http://my-svc.default.svc.cluster.local` → resolves to `db.example.com` | For connecting in-cluster apps to **external services**. |
