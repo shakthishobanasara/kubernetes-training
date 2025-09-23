@@ -137,9 +137,10 @@ http://web.example.com
 - **Ingress** = one IP, many apps, HTTP routing + TLS.  
 
 ---
-# DNS check
+# Step to check clusterIP within pod
+## DNS check
 k run dnscheck --image=busybox:1.36 --restart=Never -it --rm -- nslookup web.default.svc.cluster.local
 
-# HTTP check
+## HTTP check
 k run curler --image=curlimages/curl:8.10.1 --restart=Never -it --rm -- \
   curl -sS web.default.svc.cluster.local:80
