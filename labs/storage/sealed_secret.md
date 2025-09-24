@@ -56,6 +56,8 @@ kubectl create secret generic db-secret   --from-literal=username=admin   --from
 ### Step 2: Seal it
 ```bash
 kubeseal --format=yaml < db-secret.yaml > db-sealedsecret.yaml
+
+kubeseal --cert=pub-cert.pem --format=yaml < db-secret.yaml > db-sealedsecret.yaml
 ```
 - Uses the cluster’s public key for encryption.
 - Output is safe to commit into Git.
