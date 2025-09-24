@@ -1,4 +1,4 @@
-# Static Pods vs DaemonSet — Quick Comparison & Tomorrow’s Demo Guide
+# Static Pods vs DaemonSet — Quick Comparison
 
 
 ---
