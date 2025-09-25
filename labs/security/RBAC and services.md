@@ -133,6 +133,11 @@ kubectl create clusterrole node-reader \
 kubectl create clusterrolebinding node-reader-binding \
   --clusterrole=node-reader \
   --serviceaccount=demo:robot
+
+kubectl auth can-i delete nodes --as=system:serviceaccount:demo:robot
+
+kubectl auth can-i get nodes --as=system:serviceaccount:demo:robot
+
 ```
 
 Test:
