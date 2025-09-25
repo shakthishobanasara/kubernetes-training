@@ -83,7 +83,9 @@ kubectl get pods -A -o wide | grep <node-name> || echo "No pods on node"
 ```bash
 kubectl uncordon <node-name>
 ```
-➡️ Pods will schedule again on this node.
+➡️ Pods will schedule again on this node.Uncordon = allows new scheduling, but no auto-rebalance.
+
+To spread pods again, you need a rolling update, manual deletion, or the Kubernetes Descheduler.
 
 ---
 
