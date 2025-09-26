@@ -13,7 +13,7 @@ Deploy a sample app:
 ```bash
 kubectl create ns node-maint
 kubectl -n node-maint create deploy web \
-  --image=ghcr.io/nginxinc/nginx-unprivileged:stable \
+  --image=nginx \
   --replicas=3 --port=8080
 kubectl -n node-maint expose deploy web --port=80 --target-port=8080
 ```
